@@ -1,0 +1,39 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
+{
+	"name": "Express & TypeScript",
+	"dockerComposeFile": [
+		"./compose.yml"
+	],
+	"service": "express",
+	"workspaceFolder": "/opt/app",
+	"forwardPorts": [
+		3000
+	],
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": ".devcontainer/postcreate.sh",
+	// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"esbenp.prettier-vscode",
+				"medo64.render-crlf",
+				"mhutchie.git-graph",
+				"dbaeumer.vscode-eslint",
+				"shd101wyy.markdown-preview-enhanced"
+			],
+			"settings": {
+				"editor.renderControlCharacters": true,
+				"editor.renderWhitespace": "all",
+				"extensions.ignoreRecommendations": true,
+				"code-eol.crlfCharacter": "↵",
+				"code-eol.decorateBeforeEol": true,
+				"code-eol.highlightExtraWhitespace": true,
+				"code-eol.highlightNonDefault": true,
+				"code-eol.newlineCharacter": "↓",
+				"code-eol.returnCharacter": "←"
+			}
+		}
+	},
+	"remoteUser": "node"
+}
