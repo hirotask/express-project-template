@@ -1,5 +1,5 @@
 import express from 'express'
-import users from './controller/users'
+import users from './users/userController'
 
 const app: express.Express = express()
 app.use(express.json())
