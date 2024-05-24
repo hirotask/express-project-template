@@ -1,15 +1,18 @@
-version: '3'
 services:
   express:
-    image: mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm
+    image: mcr.microsoft.com/devcontainers/base:debian
     working_dir: /opt/app
     tty: true
+    init: true
+    command: sleep infinity
     ports:
       - 3000:3000
     volumes:
       - ../:/opt/app
     depends_on:
       - db
+  redoc:
+    image: redocly/redoc
   db:
     image: postgres:16.3-bullseye
     # If you want to persist DB information, add the following:

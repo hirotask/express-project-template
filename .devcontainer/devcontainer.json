@@ -2,12 +2,28 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
 {
   "name": "Express & TypeScript",
-  "dockerComposeFile": ["./compose.yml"],
+  "dockerComposeFile": [
+    "./compose.yml"
+  ],
   "service": "express",
   "workspaceFolder": "/opt/app",
-  "forwardPorts": [3000],
+  "forwardPorts": [
+    3000
+  ],
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2.11.0": {
+      "version": "latest",
+      "dockerDashComposeVersion": "v2"
+    },
+    "ghcr.io/devcontainers/features/git:1": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": 22
+    }
+  },
   // Use 'postCreateCommand' to run commands after the container is created.
-  "postCreateCommand": ".devcontainer/postcreate.sh",
+  // "postCreateCommand": ".devcontainer/postcreate.sh",
   // Configure tool-specific properties.
   "customizations": {
     "vscode": {
@@ -36,6 +52,5 @@
         }
       }
     }
-  },
-  "remoteUser": "node"
+  }
 }
